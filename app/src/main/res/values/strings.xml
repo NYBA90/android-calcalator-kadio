@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">KADIO</string>
+    <string name="egale">=</string>
+    <string name="zero">0</string>
+    <string name="point">.</string>
+    <string name="un">1</string>
+    <string name="deux">2</string>
+    <string name="trois">3</string>
+    <string name="quatre">4</string>
+    <string name="cinq">5</string>
+    <string name="six">6</string>
+    <string name="sept">7</string>
+    <string name="huit">8</string>
+    <string name="neuf">9</string>
+    <string name="plus">+</string>
+    <string name="moins">-</string>
+    <string name="multiplication">x</string>
+    <string name="division">/</string>
+    <string name="toggleSign">+/-</string>
+    <string name="effacer">C</string>
+    <string name="effacerMemoire">MC</string>
+    <string name="ajouterMemoire">M+</string>
+    <string name="soustractionMemoire">M-</string>
+    <string name="rappelMemoire">MR</string>
+</resources>
