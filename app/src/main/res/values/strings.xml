@@ -15,7 +15,7 @@
     <string name="plus">+</string>
     <string name="moins">-</string>
     <string name="multiplication">x</string>
-    <string name="division">/</string>
+    <string name="division">÷</string>
     <string name="toggleSign">+/-</string>
     <string name="effacer">C</string>
     <string name="effacerMemoire">MC</string>

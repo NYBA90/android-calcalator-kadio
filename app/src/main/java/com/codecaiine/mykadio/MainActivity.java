@@ -171,10 +171,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultat.append(" x ");
 
                 break;
-            case "/":
+            case "÷":
                 operationType = Operation.DIVIDE;
 
-                resultat.append(" / ");
+                resultat.append(" ÷ ");
 
                 break;
             default:
