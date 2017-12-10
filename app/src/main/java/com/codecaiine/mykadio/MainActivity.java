@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private String plus1;
 
     TextView resultat;
     Button btn_effacerMemoire, btn_ajouterMemoire, btn_soustractionMemoire, btn_rappelMemoire;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         else
                             resultat.append(buttonText);
                     }
+
                     // else do not add more decimal dots
                 } else {
                     resultat.setText("0" + buttonText);
@@ -116,7 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_effacer:
                 resultat.setText("0");
+
                 // Reset all operations and operands
+
                 operand1 = operand2 = null;
                 operationType = Operation.NONE;
                 newOperand = false;
@@ -151,15 +155,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (buttonText){
             case "+":
                 operationType = Operation.ADD;
+
+                resultat.append(" + ");
+
                 break;
             case "-":
                 operationType = Operation.SUBTRACT;
+
+                resultat.append(" - ");
+
                 break;
             case "x":
                 operationType = Operation.MULTIPLY;
+
+                resultat.append(" x ");
+
                 break;
             case "/":
                 operationType = Operation.DIVIDE;
+
+                resultat.append(" / ");
+
                 break;
             default:
                 operationType = Operation.NONE;
@@ -173,21 +189,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Operation Type not specified then do not do anything
             operand1 = text;
         } else {
+
             // Performing Operation
             double op1 = Double.parseDouble(operand1);
             double op2 = Double.parseDouble(text);
+
             if (operationType == Operation.ADD) {
                 op1 = op1 + op2;
+                
             } else if (operationType == Operation.SUBTRACT) {
                 op1 = op1 - op2;
             } else if (operationType == Operation.MULTIPLY) {
                 op1 = op1 * op2;
             } else if (operationType == Operation.DIVIDE) {
+
                 op1 = op1 / op2;    // Todo: Check if op2 is 0 to prevent DivideByZero Exception
             }
+
             operand1 = String.valueOf(op1);
             op1 = op2 = Double.NaN; // Resetting for GC
-            resultat.setText(operand1);
+            resultat.setText(" = " + operand1);
         }
     }
 }
