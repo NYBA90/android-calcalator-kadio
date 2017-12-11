@@ -191,24 +191,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
 
             // Performing Operation
+            String op3 = null;
             double op1 = Double.parseDouble(operand1);
             double op2 = Double.parseDouble(text);
+            
+            String op11 = String.valueOf(op1);
+            String op22 = String.valueOf(op2);
+
+
 
             if (operationType == Operation.ADD) {
                 op1 = op1 + op2;
-                
+
+                op3 = " + ";
             } else if (operationType == Operation.SUBTRACT) {
                 op1 = op1 - op2;
+
+                op3 = " - ";
             } else if (operationType == Operation.MULTIPLY) {
                 op1 = op1 * op2;
-            } else if (operationType == Operation.DIVIDE) {
 
+                op3 = " x ";
+
+            } else if (operationType == Operation.DIVIDE) {
                 op1 = op1 / op2;    // Todo: Check if op2 is 0 to prevent DivideByZero Exception
+
+                op3 = " ÷ ";
             }
 
             operand1 = String.valueOf(op1);
             op1 = op2 = Double.NaN; // Resetting for GC
-            resultat.setText(" = " + operand1);
+            resultat.setText(op11 + op3 + op22 + " = " + operand1);
         }
     }
 }
